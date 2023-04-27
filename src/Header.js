@@ -12,8 +12,7 @@ import PopupSnackbar from './components/snackbar/popupSnackbar';
 
 export default function Header(props) {
   const [submissionEntry, setSubmissionEntry] = useState();
-    const [open, setOpen] = React.useState(false);
-
+  const [open, setOpen] = React.useState(false);
 
   function handleNewMessage(message) {
     setSubmissionEntry(message);
