@@ -11,6 +11,7 @@ export default function PopupSnackbar(props) {
     if (reason === 'clickaway') {
       return;
     }
+    props.setOpen(false);
   };
 
   const messageWrapper = () => {
@@ -27,14 +28,15 @@ export default function PopupSnackbar(props) {
         width: '100%'
       }
     }
+    const { firstName, lastName, email } = props.submissionEntry?.data;
 
     return (
       <Box sx={infoStyle}>
         <Box>
-          Jaimi Sheta
+          {firstName} {lastName}
         </Box>
         <Box>
-          jaimi.sheta@rdbrck.com
+          {email}
         </Box>
       </Box>
     )
@@ -42,20 +44,20 @@ export default function PopupSnackbar(props) {
 
   return (
     <Snackbar
-      key={'jaimi'}
-      open={true}
+      open={props.open}
       autoHideDuration={6000}
+      onClose={() => handleClose()}
       message={messageWrapper()}
       anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       style={{ width: 'auto', height: 'auto' }}
       action={
         <Box>
-          <Button sx={{ color: '#56c1dc', fontWeight: '600', fontSize: '16px' }} size="small" >
+          <Button sx={{ color: '#56c1dc', fontWeight: '600', fontSize: '16px' }} size="small" onClick={() => props.saveItem()}>
             LIKE
           </Button>
           <IconButton
             aria-label="close"
-            onClick={handleClose}
+            onClick={() => handleClose()}
             sx={{ color: '#fff' }}
           >
             <CloseIcon />

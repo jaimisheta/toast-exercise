@@ -7,20 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Card } from '@mui/material';
 
-export default function SimpleTable() {
-
-  const rows = [
-    {
-      email: 'mahum.azeem@gmail.com',
-      firstName: 'Mahum',
-      lastName: 'Azeem'
-    },
-    {
-      email: 'jaimi.sheta@gmail.com',
-      firstName: 'Jaimi',
-      lastName: 'Sheta'
-    }
-  ];
+export default function SimpleTable(props) {
   return (
     <TableContainer component={Card}>
       <Table sx={{ minWidth: 650 }} aria-label='simple table'>
@@ -32,7 +19,7 @@ export default function SimpleTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row, index) => (
+          {props.rows.map((row, index) => (
             <TableRow
               key={index.toString()}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
