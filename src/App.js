@@ -45,7 +45,7 @@ function App() {
         setSnackbar(false);
       })
       .catch(error => {
-        toast.success("Something went wrong with saving the record", {
+        toast.error("Something went wrong with saving the record", {
           position: toast.POSITION.TOP_CENTER
         });
       })
