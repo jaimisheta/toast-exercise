@@ -3,6 +3,7 @@ import Container from '@mui/material/Container';
 
 import Header from './Header';
 import Content from './Content';
+import PopupSnackbar from './components/snackbar/popupSnackbar';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Container>
         <Content />
       </Container>
+      <PopupSnackbar />
     </>
   );
 }
