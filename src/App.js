@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import Header from './Header';
 import Content from './Content';
 import PopupSnackbar from './components/snackbar/popupSnackbar';
+import SimpleTable from './table/table';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Content />
       </Container>
       <PopupSnackbar />
+      <SimpleTable />
     </>
   );
 }
